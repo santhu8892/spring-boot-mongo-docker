@@ -2,11 +2,11 @@ version: '3.1'
 
 services:
   springboot:
-    image: dockerhandson/spring-boot-mongo:latest
+    image: darshanreddymr/spring-boot-mongo:latest
     restart: always
     container_name: springboot
     ports:
-      - 9090:8080
+      - 9091:8080
     working_dir: /opt/app
     depends_on:
       - mongo
@@ -20,7 +20,7 @@ services:
 
   mongo:
     image: mongo
-    container_name: springboot-mongo
+    container_name: spring-boot-mongo
 #    ports:  # for demo/debug purpose only
 #      - 27018:27017
     volumes:
@@ -37,4 +37,4 @@ volumes:
 networks:
   default:
     external:
-      name: customoverlay
+      name: springnetwork
